@@ -1,11 +1,45 @@
 <html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title> Práctica4.2.2</title>	
+		<style>
+		
+	</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function borrartodo(){
+				formulario.operando1.value="";
+				formulario.operando2.value="";
+				formulario.resultado.value="";
+			}
+			
+			function operacion (num1, num2, operador){
+				var res;
+				if (operador == "+")
+					res= (num1 + num2);
+				else
+					if (operador == "-")
+						res= num1 - num2;
+					else
+						if(operador == "X")
+							res= num1 * num2;
+						else 
+							res= num1 / num2;
 
-<head>
-
-</head>
-<body>
-<p>hola mundo!!! </p>
-
-</body>
-
+				return res;
+			}
+		</script>
+		<form name="formulario">
+			<h1>MINICALCULADORA</h1>
+			<p><b>Operando1 </b><input type="text" name="operando1"></p>
+			<p><b>Operando2 </b><input type="text" name="operando2"></p>
+			<p><input type="button" name="suma" value="+" onclick="var res = operacion(formulario.operando1.value, formulario.operando2.value, formulario.suma.value); formulario.resultado.value= res;">
+				<input type="button" name="resta" value="-" onclick="var res = operacion(formulario.operando1.value, formulario.operando2.value, formulario.resta.value); formulario.resultado.value= res;"">
+				<input type="button" name="multiplicacion" value="X" onclick="var res = operacion(formulario.operando1.value, formulario.operando2.value, formulario.multiplicacion.value); formulario.resultado.value= res;"">
+				<input type="button" name="division" value="/" onclick="var res = operacion(formulario.operando1.value, formulario.operando2.value, formulario.division.value); formulario.resultado.value= res;"">
+				<input type="button" name="borrar" value="borrar" onclick="borrartodo()"></p>
+			<p> <b>Resultado </b> <input type="text" name="resultado">
+		</form>
+	</body>
 </html>
